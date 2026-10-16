@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ScheduleContext stays after the pointer leaves the time axis</title>
+    <link rel="stylesheet" href="/node_modules/@bryntum/schedulerpro/schedulerpro.css">
+    <link rel="stylesheet" href="/node_modules/@bryntum/schedulerpro/material3-light.css">
+    <style>
+        body { margin: 0; font-family: sans-serif; display: flex; flex-direction: column; height: 100vh; }
+        header { padding: 8px 12px; border-bottom: 1px solid #ddd; }
+        #container { flex: 1; min-height: 0; }
+        /* Only makes the hovered cell visible: the stock theme draws ScheduleContext very faintly. */
+        .b-schedule-selected-tick { display: flex; align-items: center; justify-content: center; background: #d9c9ff; font-size: 1.5em; }
+        .b-schedule-selected-tick::before { content: '+'; }
+    </style>
+</head>
+<body>
+    <header>
+        Hover the first day of any row, then move the pointer left onto the resource name.
+        The highlighted cell should go away. It stays.
+    </header>
+    <div id="container"></div>
+    <script type="module" src="/main.js"></script>
+</body>
+</html>
