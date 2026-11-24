@@ -1,12 +1,12 @@
 # ScheduleContext (hover) stays after the pointer leaves the time axis
 
-Minimal repro for Bryntum support. Scheduler Pro 7.3.7, plain JS + Vite, `scheduleContext: { triggerEvent: 'hover' }`,
+Minimal repro for Bryntum support. Scheduler Enterprise 8.0.2 (`@bryntum/scheduler-enterprise`), plain JS + Vite, `scheduleContext: { triggerEvent: 'hover' }`,
 no events, 3 resources.
 
 ## Run
 
 ```sh
-npm install   # needs access to npm.bryntum.com
+npm install
 npm run dev   # http://localhost:5193/
 npm run repro # in another terminal, headless
 ```
@@ -26,3 +26,8 @@ Same when leaving below the last row, upwards onto the header, or out of the sch
 `Scheduler/view/mixin/TimelineDomEvents.js:149-153` listens to `mouseleave` on `timeAxisSubGridElement`, and
 `handleScheduleLeaveEvent` (`:230-234`) calls `handleScheduleEvent(event)` again with the leave event instead of
 clearing the context. We think the leave coordinates still resolve to the edge cell, so the context is kept.
+
+## Retest on 8.0.x (24 Nov 2026)
+
+Scheduler Pro is now `@bryntum/scheduler-enterprise`, so this repro moved to it (`Scheduler` instead of `SchedulerPro`).
+Same result on 8.0.0 and 8.0.2: still reproducible.

@@ -1,6 +1,6 @@
-import { SchedulerPro } from '@bryntum/schedulerpro';
+import { Scheduler } from '@bryntum/scheduler-enterprise';
 
-window.scheduler = new SchedulerPro({
+window.scheduler = new Scheduler({
     appendTo   : 'container',
     startDate  : new Date(2026, 9, 12),
     endDate    : new Date(2026, 9, 19),

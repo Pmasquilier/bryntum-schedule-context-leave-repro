@@ -7,7 +7,7 @@
     "repro": "node repro.mjs"
   },
   "dependencies": {
-    "@bryntum/schedulerpro": "7.3.7"
+    "@bryntum/scheduler-enterprise": "8.0.2"
   },
   "devDependencies": {
     "playwright-core": "^1.63.0",
